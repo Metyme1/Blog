@@ -11,3 +11,7 @@ app.get('/',(req,res)=>{
 app.get('/about',(req,res)=>{
     res.sendFile('./views/about.html',{root:__dirname});
  })
+
+ app.use((req,res)=>{
+   res.status(404).sendFile('./views/404.html',{root:__dirname});
+ })
